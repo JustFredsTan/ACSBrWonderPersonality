@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Which Wonder Character Are You?</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      margin: 24px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    .character-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Which <em>Wonder</em> Character Are You Most Like?</h1>
+  <p>
+    Answer the questions as honestly as you can. There are no right or wrong answers. At the end,
+    you&apos;ll see which character from <em>Wonder</em> your patterns are closest to.
+  </p>
+
+  <form id="quizForm">
+
+    <!-- Q1 -->
+    <div class="question">
+      <p><strong>1. A new student joins your class and looks very different from everyone else. Your first instinct is to…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="august">
+          A. Sit nearby, feel nervous, but push yourself to say hello because you know what it&apos;s like to feel stared at.
+        </label>
+        <label><input type="radio" name="q1" value="via">
+          B. Notice them immediately and think about what this might mean for the class, but keep most of your thoughts to yourself.
+        </label>
+        <label><input type="radio" name="q1" value="summer">
+          C. Walk straight over, introduce yourself, and invite them to join you so they don&apos;t feel alone.
+        </label>
+        <label><input type="radio" name="q1" value="savannah">
+          D. Weigh up how talking to them will look in front of others and maybe wait until the &quot;right&quot; public moment to be nice.
+        </label>
+        <label><input type="radio" name="q1" value="julian">
+          E. Crack a small joke or comment to your friends to cover up your discomfort about how different they look.
+        </label>
+        <label><input type="radio" name="q1" value="jack">
+          F. Glance over a few times, feel like you should say hi, but hesitate and wait to see what your friends do first.
+        </label>
+        <label><input type="radio" name="q1" value="justin">
+          G. Observe quietly, feel curious about their story, and tell yourself you&apos;ll talk to them when things feel calmer.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question">
+      <p><strong>2. When people gossip about a classmate who isn&apos;t there, you usually…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="august">
+          A. Feel sick inside if they target someone vulnerable and think about how that person would feel.
+        </label>
+        <label><input type="radio" name="q2" value="via">
+          B. Listen more than you speak, analyse what&apos;s happening, and only step in if things go too far.
+        </label>
+        <label><input type="radio" name="q2" value="summer">
+          C. Try to gently redirect the conversation or say something kind to balance out the negativity.
+        </label>
+        <label><input type="radio" name="q2" value="savannah">
+          D. Join in enough to stay in the loop, but also know exactly when to stop so you still look &quot;nice&quot;.
+        </label>
+        <label><input type="radio" name="q2" value="julian">
+          E. Lean into the gossip, especially if it makes you feel more powerful or respected in the group.
+        </label>
+        <label><input type="radio" name="q2" value="jack">
+          F. Go along with it sometimes even if you regret it later and tell yourself you didn&apos;t really mean it.
+        </label>
+        <label><input type="radio" name="q2" value="justin">
+          G. Feel uncomfortable and prefer to talk about ideas, music, or deeper things instead of tearing people down.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question">
+      <p><strong>3. When you feel painfully self-conscious about yourself, you tend to…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="august">
+          A. Force yourself to keep showing up, even if you replay every moment in your head later.
+        </label>
+        <label><input type="radio" name="q3" value="via">
+          B. Hide your feelings, put on a calm front, and focus on your responsibilities instead.
+        </label>
+        <label><input type="radio" name="q3" value="summer">
+          C. Remind yourself that everyone has something they&apos;re insecure about and lean on kindness.
+        </label>
+        <label><input type="radio" name="q3" value="savannah">
+          D. Carefully manage your image so others only see the &quot;best&quot; version of you.
+        </label>
+        <label><input type="radio" name="q3" value="julian">
+          E. Deflect with humour, sarcasm, or by pointing out others&apos; flaws so yours don&apos;t show.
+        </label>
+        <label><input type="radio" name="q3" value="jack">
+          F. Change how you act to fit in better, even if it means being less like your true self.
+        </label>
+        <label><input type="radio" name="q3" value="justin">
+          G. Retreat into your own world—music, stories, or creative projects where you feel more like &quot;you&quot;.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question">
+      <p><strong>4. In your family, when things get stressful or complicated, you are most likely to…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="august">
+          A. Worry that you&apos;re causing extra trouble, even if you&apos;re not, and wish everyone could just be okay.
+        </label>
+        <label><input type="radio" name="q4" value="via">
+          B. Become the quiet, responsible one who handles things and doesn&apos;t demand attention.
+        </label>
+        <label><input type="radio" name="q4" value="summer">
+          C. Offer emotional support—listening, comforting, and trying to keep everyone connected.
+        </label>
+        <label><input type="radio" name="q4" value="savannah">
+          D. Focus on how things look from the outside and keep up appearances as much as possible.
+        </label>
+        <label><input type="radio" name="q4" value="julian">
+          E. Distance yourself, roll your eyes internally, and assume most adults don&apos;t really get it.
+        </label>
+        <label><input type="radio" name="q4" value="jack">
+          F. Try to keep the peace by joking, apologising, or smoothing things over, even when you&apos;re conflicted.
+        </label>
+        <label><input type="radio" name="q4" value="justin">
+          G. Feel protective of the people you love and anxious about losing them, even if you don&apos;t always say it.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question">
+      <p><strong>5. A friend makes a cruel joke about someone&apos;s appearance. You…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="august">
+          A. Feel a sharp sting inside, imagining how you would feel if that were said about you.
+        </label>
+        <label><input type="radio" name="q5" value="via">
+          B. Notice who laughs and who doesn&apos;t, and store it away quietly—this changes how you see them.
+        </label>
+        <label><input type="radio" name="q5" value="summer">
+          C. Say something like, &quot;That&apos;s not cool,&quot; or change the subject to show you&apos;re not okay with it.
+        </label>
+        <label><input type="radio" name="q5" value="savannah">
+          D. Laugh weakly or smile because you don&apos;t want to look too serious or sensitive.
+        </label>
+        <label><input type="radio" name="q5" value="julian">
+          E. Join in or add on, especially if it keeps your status high in the group.
+        </label>
+        <label><input type="radio" name="q5" value="jack">
+          F. Awkwardly laugh along in the moment, then later feel guilty and wish you had spoken up.
+        </label>
+        <label><input type="radio" name="q5" value="justin">
+          G. Go quiet, feel uncomfortable, and maybe talk one-to-one later with the person who was hurt.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question">
+      <p><strong>6. When school becomes overwhelming and you feel under pressure, your pattern is…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="august">
+          A. To push through and keep working, even if your anxiety is intense and you feel like you might break.
+        </label>
+        <label><input type="radio" name="q6" value="via">
+          B. To organise your time, prioritise what matters most, and silently absorb the stress.
+        </label>
+        <label><input type="radio" name="q6" value="summer">
+          C. To look for someone kind or safe to talk to, or to lean on relationships to stay grounded.
+        </label>
+        <label><input type="radio" name="q6" value="savannah">
+          D. To worry first about how failure or success will affect your reputation and social position.
+        </label>
+        <label><input type="radio" name="q6" value="julian">
+          E. To blame the system, teachers, or others before admitting that you might also need to change.
+        </label>
+        <label><input type="radio" name="q6" value="jack">
+          F. To procrastinate, then scramble and promise yourself you&apos;ll do better next time.
+        </label>
+        <label><input type="radio" name="q6" value="justin">
+          G. To escape into art, writing, music, or creative daydreams that make the pressure feel manageable.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question">
+      <p><strong>7. You&apos;re stuck between two friend groups that don&apos;t like each other. You…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="august">
+          A. Feel torn because you never wanted anyone to get hurt, and you wish everyone could just get along.
+        </label>
+        <label><input type="radio" name="q7" value="via">
+          B. Step back emotionally, deciding very carefully where your long-term loyalty actually lies.
+        </label>
+        <label><input type="radio" name="q7" value="summer">
+          C. Try to be a bridge—listening to both sides and quietly encouraging kindness where you can.
+        </label>
+        <label><input type="radio" name="q7" value="savannah">
+          D. Align yourself with the group that boosts your image the most, even if you don&apos;t fully agree with them.
+        </label>
+        <label><input type="radio" name="q7" value="julian">
+          E. Pick the group with more power and lean into it, sometimes by attacking the other group.
+        </label>
+        <label><input type="radio" name="q7" value="jack">
+          F. Switch back and forth, saying slightly different things to each side, then feel bad about it later.
+        </label>
+        <label><input type="radio" name="q7" value="justin">
+          G. Stay on the edges of both, valuing the individuals more than the drama and preferring deeper one-to-one bonds.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question">
+      <p><strong>8. When you realise you&apos;ve genuinely hurt someone, you usually…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="august">
+          A. Replay the moment repeatedly and feel heavy guilt, wanting desperately to make things right.
+        </label>
+        <label><input type="radio" name="q8" value="via">
+          B. Reflect deeply, maybe write about it or think it through before you choose the right moment to apologise.
+        </label>
+        <label><input type="radio" name="q8" value="summer">
+          C. Approach them gently, acknowledge their feelings, and try to repair the relationship with empathy.
+        </label>
+        <label><input type="radio" name="q8" value="savannah">
+          D. Worry more about how this will affect what people think of you than about the hurt itself.
+        </label>
+        <label><input type="radio" name="q8" value="julian">
+          E. Defend yourself, minimise their feelings, or blame them for &quot;overreacting&quot;.
+        </label>
+        <label><input type="radio" name="q8" value="jack">
+          F. Apologise, even if clumsily, and try to show through actions that you&apos;re genuinely sorry.
+        </label>
+        <label><input type="radio" name="q8" value="justin">
+          G. Express yourself better in writing or messages than face-to-face, but the remorse is real.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question">
+      <p><strong>9. When adults misunderstand you or misjudge a situation, your internal response is…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="august">
+          A. &quot;If they really knew what it feels like, they&apos;d see me differently,&quot; and you feel a mix of shame and frustration.
+        </label>
+        <label><input type="radio" name="q9" value="via">
+          B. &quot;They see only the surface,&quot; and you remind yourself that you&apos;ve been carrying more than they realise for a long time.
+        </label>
+        <label><input type="radio" name="q9" value="summer">
+          C. &quot;They&apos;re probably stressed too,&quot; and you try to give them the benefit of the doubt.
+        </label>
+        <label><input type="radio" name="q9" value="savannah">
+          D. &quot;They don&apos;t get how things work socially here,&quot; and you focus on keeping your own position safe.
+        </label>
+        <label><input type="radio" name="q9" value="julian">
+          E. &quot;They always take things so seriously,&quot; and you feel tempted to dismiss what they&apos;re saying.
+        </label>
+        <label><input type="radio" name="q9" value="jack">
+          F. &quot;I messed up, but I wish they&apos;d also see my good side,&quot; and you want a chance to prove yourself.
+        </label>
+        <label><input type="radio" name="q9" value="justin">
+          G. &quot;They&apos;re hearing only one version of the story,&quot; and you wish you could explain it more calmly and clearly.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question">
+      <p><strong>10. At a big social event (like a party or school celebration), you tend to…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="august">
+          A. Feel both excited and nervous, scanning the room for signs that people accept you.
+        </label>
+        <label><input type="radio" name="q10" value="via">
+          B. Stay somewhat on the sidelines, keeping an eye on those you care about and stepping in when needed.
+        </label>
+        <label><input type="radio" name="q10" value="summer">
+          C. Move towards the people who seem lonely or left out, trying to make them feel welcome.
+        </label>
+        <label><input type="radio" name="q10" value="savannah">
+          D. Think about outfits, photos, and who to be seen with so the night &quot;looks&quot; good.
+        </label>
+        <label><input type="radio" name="q10" value="julian">
+          E. Gravitate to the popular centre of the room, enjoying the attention and control.
+        </label>
+        <label><input type="radio" name="q10" value="jack">
+          F. Jump between groups, joking and chatting, sometimes saying more than you mean to.
+        </label>
+        <label><input type="radio" name="q10" value="justin">
+          G. Find a quieter corner, meaningful conversation, or space where you can be more fully yourself.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="question">
+      <p><strong>11. In friendships, what matters most to you (even if you don&apos;t always say it)?</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="august">
+          A. Being accepted as you are, without having to hide the parts of you that feel &quot;different&quot;.
+        </label>
+        <label><input type="radio" name="q11" value="via">
+          B. Being respected for your depth, loyalty, and the things you handle that others don&apos;t see.
+        </label>
+        <label><input type="radio" name="q11" value="summer">
+          C. Mutual kindness—feeling that both of you will show up for each other when it really counts.
+        </label>
+        <label><input type="radio" name="q11" value="savannah">
+          D. Having friends who enhance your image and open doors socially.
+        </label>
+        <label><input type="radio" name="q11" value="julian">
+          E. Having influence—friends who follow your lead and back you in conflicts.
+        </label>
+        <label><input type="radio" name="q11" value="jack">
+          F. Being forgiven when you mess up and having the chance to grow and change.
+        </label>
+        <label><input type="radio" name="q11" value="justin">
+          G. Feeling understood at a deeper emotional or creative level, beyond small talk.
+        </label>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="question">
+      <p><strong>12. When you face a big change (new class, new environment), your default pattern is…</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="august">
+          A. Feel afraid but decide to face it anyway, step by step, even if people stare or judge.
+        </label>
+        <label><input type="radio" name="q12" value="via">
+          B. Quickly figure out how this will affect your responsibilities and the people you look after.
+        </label>
+        <label><input type="radio" name="q12" value="summer">
+          C. Look for one kind face or safe person to connect with so everything feels less overwhelming.
+        </label>
+        <label><input type="radio" name="q12" value="savannah">
+          D. Study the new social structure and position yourself where you&apos;ll be most admired.
+        </label>
+        <label><input type="radio" name="q12" value="julian">
+          E. Establish control early, using humour or criticism so people take you seriously.
+        </label>
+        <label><input type="radio" name="q12" value="jack">
+          F. Try to fit in smoothly, even if it means adjusting your personality slightly at first.
+        </label>
+        <label><input type="radio" name="q12" value="justin">
+          G. Observe quietly, pick up on the atmosphere, and then slowly plant yourself where the vibes feel authentic.
+        </label>
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateResult()">See My Result</button>
+  </form>
+
+  <div id="result" style="display:none;"></div>
+
+  <script>
+    function calculateResult() {
+      const questionNames = [
+        "q1","q2","q3","q4","q5","q6",
+        "q7","q8","q9","q10","q11","q12"
+      ];
+
+      const scores = {
+        august: 0,
+        via: 0,
+        summer: 0,
+        savannah: 0,
+        julian: 0,
+        jack: 0,
+        justin: 0
+      };
+
+      for (const qName of questionNames) {
+        const selected = document.querySelector('input[name="' + qName + '"]:checked');
+        if (!selected) {
+          alert("Please answer all questions before seeing your result.");
+          return;
+        }
+        scores[selected.value] += 1;
+      }
+
+      let maxScore = 0;
+      for (const key in scores) {
+        if (scores[key] > maxScore) maxScore = scores[key];
+      }
+
+      const topCharacters = Object.keys(scores).filter(
+        key => scores[key] === maxScore
+      );
+
+      const descriptions = {
+        august: "You feel things deeply and are often very aware of how others see you. Even when you are anxious or self-conscious, you show quiet courage by turning up, trying again, and choosing kindness. You long to be accepted as you are and often notice pain that others ignore.",
+        via: "You are emotionally mature and carry a lot without demanding attention. You notice patterns, remember details, and often protect others before yourself. People may not realise how much you hold together in the background, but you do—and that gives you quiet strength.",
+        summer: "You are drawn to people rather than appearances. You value loyalty, warmth, and fairness, and you often step towards the outsider, not away. You may not call yourself ‘brave’, but your everyday choices show moral courage and a strong sense of compassion.",
+        savannah: "You are sensitive to status, image, and the ‘social game’. You understand how impressions work and often think strategically about them. Underneath, there is usually a wish to belong and be seen as important—your growth lies in choosing authenticity over performance.",
+        julian: "You dislike feeling vulnerable and may protect yourself with control, criticism, or humour. You are tuned into power and reputation. When you are ready to be honest about your own fears, you have the chance to transform that sharpness into leadership that uses influence to protect, not harm.",
+        jack: "You are friendly, adaptable, and often caught between what is right and what is easy. You care about people, but you also care about fitting in. When you slow down enough to listen to your conscience, you are capable of real loyalty and brave apologies.",
+        justin: "You are reflective, creative, and often feel like an observer on the edge of things. You pick up emotional undercurrents and may express yourself better through art, writing, or quiet conversations. Your protective instinct for the people you love is strong, even when your anxiety is loud."
+      };
+
+      const niceName = {
+        august: "August",
+        via: "Via",
+        summer: "Summer",
+        savannah: "Savannah",
+        julian: "Julian",
+        jack: "Jack",
+        justin: "Justin"
+      };
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+
+      if (topCharacters.length === 1) {
+        const c = topCharacters[0];
+        resultDiv.innerHTML =
+          "<p class='character-name'>You are most like " +
+          niceName[c] +
+          ".</p><p>" +
+          descriptions[c] +
+          "</p>";
+      } else {
+        const names = topCharacters.map(c => niceName[c]).join(", ");
+        resultDiv.innerHTML =
+          "<p class='character-name'>You are a mix of: " +
+          names +
+          ".</p><p>You share strong traits with more than one character. You might find it interesting to revisit key scenes in <em>Wonder</em> for these characters and ask which parts of their journey feel closest to your own.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
